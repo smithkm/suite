@@ -559,12 +559,12 @@ Section "GDAL" SectionGDAL
   !insertmacro DisplayImage "graphics\slide_1_suite.bmp"
 
   SetOutPath "$INSTDIR\jre\bin"
-  File /r "${SOURCEPATHROOT}\jre\bin\gdal18.dll"
+  File /r "${SOURCEPATHROOT}\jre\bin\gdal19.dll"
   File /r "${SOURCEPATHROOT}\jre\bin\gdalconstjni.dll"
   File /r "${SOURCEPATHROOT}\jre\bin\gdaljni.dll"
   File /r "${SOURCEPATHROOT}\jre\bin\ogrjni.dll"
   File /r "${SOURCEPATHROOT}\jre\bin\osrjni.dll"
-  File /r "${SOURCEPATHROOT}\webapps\geoserver\WEB-INF\lib\gdal-1.8.1.jar"
+  File /r "${SOURCEPATHROOT}\webapps\geoserver\WEB-INF\lib\gdal-1.9.1.jar"
 
 SectionEnd
 
@@ -665,12 +665,6 @@ Section "Documentation" SectionDocs
   CreateShortCut "$SMPROGRAMS\$STARTMENU_FOLDER\Documentation\GeoExplorer Documentation.lnk" \
 		         "$INSTDIR\webapps\opengeo-docs\geoexplorer\index.html" \
                  "" "$INSTDIR\icons\geoexplorer.ico" 0
-  CreateShortCut "$SMPROGRAMS\$STARTMENU_FOLDER\Documentation\GeoEditor Documentation.lnk" \
-		         "$INSTDIR\webapps\opengeo-docs\geoeditor\index.html" \
-                 "" "$INSTDIR\icons\geoeditor.ico" 0
-  CreateShortCut "$SMPROGRAMS\$STARTMENU_FOLDER\Documentation\Styler Documentation.lnk" \
-		         "$INSTDIR\webapps\opengeo-docs\styler\index.html" \
-                 "" "$INSTDIR\icons\styler.ico" 0
   CreateShortCut "$SMPROGRAMS\$STARTMENU_FOLDER\Documentation\GeoWebCache Documentation.lnk" \
 		         "$INSTDIR\webapps\opengeo-docs\geoserver\geowebcache\index.html" \
                  "" "$INSTDIR\icons\geowebcache.ico" 0

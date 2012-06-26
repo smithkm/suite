@@ -1,7 +1,7 @@
 .. _workflow.load:
 
-Step 1: Load Your Data Using PostGIS
-====================================
+Load Your Data With PostGIS
+===========================
 
 .. note:: If you'd like to serve data directly from shapefiles, you can skip to the next section, :ref:`workflow.import`.
 
@@ -18,21 +18,18 @@ The first step of any workflow is to load your data into the OpenGeo Suite.  For
    .. note:: Linux users should run :command:`shp2pgsql-gui` from the terminal.
 
    .. figure:: img/load_dashboard_pgshp.png
-      :align: center
 
       *Import shapefiles link*
 
-#. Next, click on the box that is titled :guilabel:`Shape File.`
+#. pgShapeloader will load.
 
-   .. figure:: img/load_pgshp.png
-      :align: center
+   .. figure:: ../../dataadmin/loading/img/pgshapeloader.png
 
       *pgShapeLoader*
 
-#. In the folder dialog that appears, navigate to the location of your first shapefile, select it, then click :guilabel:`Open`.
+#. Next, click on the box that is titled :guilabel:`Shape File.`  In the folder dialog that appears, navigate to the location of your first shapefile, select it, then click :guilabel:`Open`.
 
-   .. figure:: img/load_pgshp_select.png
-      :align: center
+   .. figure:: ../../dataadmin/loading/img/pgshp_select.png
 
       *Selecting a shapefile to import*
 
@@ -67,15 +64,9 @@ The first step of any workflow is to load your data into the OpenGeo Suite.  For
 
    .. warning:: Do not forget to enter the projection code in the **SRID** field.  The default value of -1 will need to be changed.  If you don't know the projection code (sometimes also known as SRS, CRS, or EPSG code) see the next section on :ref:`workflow.load.projection`.
 
-   .. figure:: img/load_pgshp_form.png
-      :align: center
-
-      *Ready to import*
-
 #. When ready, click :guilabel:`Import`.
 
-   .. figure:: img/load_pgshp_importing.png
-      :align: center
+   .. figure:: ../../dataadmin/loading/img/pgshp_importing.png
 
       *A successful import*
 
@@ -106,9 +97,8 @@ Convert using Prj2EPSG
 `Prj2EPSG <http://prj2epsg.org>`_ is a simple service for converting well-known text projection information from ``.prj`` files into standard EPSG codes. Shapefiles are comprised of multiple files, each with different extensions (``.shp``, ``.shx``, ``.prj`` among others). To use Prj2EPSG, open the ``.prj`` file with your text editor and paste the first block of text, known as `well-known text` or "WKT", into the text box.  Alternately, simply upload the ``.prj`` file using the upload dialog and click :guilabel:`Convert`.
 
    .. figure:: img/load_prj2epsg.png
-      :align: center
 
-      *The Prj2EPSG results screen*
+      *Prj2EPSG*
 
 Search spatialreference.org
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -147,9 +137,9 @@ To verify that your data was loaded properly, you can use :guilabel:`pgAdmin`, a
 
    .. note:: There will be two extra tables in the list, :guilabel:`geometry_columns`, and :guilabel:`spatial_ref_sys`.  Those two tables are automatically created by PostGIS.
 
-   .. figure:: img/load_pgadmin_table.png
+   .. figure:: ../../dataadmin/loading/img/pgshp_pgadminconfirm.png
       :align: center
 
       *Database table listing*
 
-For more information about pgAdmin and PostGIS, please see the PostGIS Documentation. You can access this by clicking the :guilabel:`PostGIS Documentation` link in the :ref:`dashboard`, or online at http://suite.opengeo.org/opengeo-docs/postgis/ .
+For more information about pgAdmin and PostGIS, please see the `PostGIS Documentation <../../postgis/>`_. You can access this by clicking the :guilabel:`PostGIS Documentation` link in the :ref:`dashboard`.
