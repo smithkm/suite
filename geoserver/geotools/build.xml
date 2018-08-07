@@ -1,7 +1,8 @@
 <project name="geotools" default="build">
   <import file="../../build/common.xml"/>
- 
-  <property name="gt.flags" value=""/>
+
+  <!-- pending profile contains ogr-jni -->
+  <property name="gt.flags" value="-P pending"/>
   <property name="gt.dir" value="geotools"/>
 
   <target name="clean" unless="skip.gt" description="Clean GeoTools">
